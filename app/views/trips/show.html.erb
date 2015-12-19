@@ -1,0 +1,24 @@
+
+<!-------------------------Status Form----------------------------------->
+
+<%= simple_form_for([@trip, @trip.status_times.build]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+     
+    <%= f.input :status, collection: [ "On Duty Not Driving", "Driving", 
+                    "Off Duty", "In Sleeper"], prompt: "Select Status"  %>
+    <%= f.input :notes %>
+    <%= f.input :location %>
+   
+    
+   
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-mini btn-success' %>
+  </div>
+<% end %>
+
+<!--------------------End Status Form----------------------------------->
+<%= render partial: 'shared/status_views' %>

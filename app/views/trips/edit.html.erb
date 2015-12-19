@@ -1,0 +1,9 @@
+<% @trip.each do |trip| %>
+<h4>Trip For <%= trip.created_at.strftime("%b %d, %Y") %></h4> 
+<% end %>
+
+<%= render partial: 'shared/status_views' %>
+
+
+
+<%= link_to 'Back', trips_path, class: 'btn btn-mini btn-success' %>
