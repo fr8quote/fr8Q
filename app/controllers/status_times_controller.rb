@@ -9,16 +9,16 @@ class StatusTimesController < ApplicationController
     @status_time = @trip.status_times.create(status_time_params)
     @status_time.user_id = current_user.id if current_user
 
-    respond_to do |format|
+
       if @status_time.save
-        format.html { redirect_to trip_path( @trip), notice: 'Status time was successfully created.' }
-        format.json { render :show, status: :created, location: @status_time }
+       redirect_to trip_path( @trip), notice: 'Your driving status has been updated.' 
+        
       else
-        format.html { render :new }
-        format.json { render json: @status_time.errors, status: :unprocessable_entity }
+         redirect_to trip_path( @trip), notice: "what the hell are you trying to do" 
+       
       end
     end
-  end
+
 
 #------------------------------------------------------------------------------ 
 
